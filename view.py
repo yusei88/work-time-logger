@@ -7,12 +7,25 @@ viewを提供する
 """
 import const
 
+def section():
+    print(const.SYMBOL * const.SYMBOL_LENGTH)
+
+def initialView() -> None:
+    section()
+    print("勤怠管理アプリ")
+    section()
+
+def systemMessage(message: str, type: bool) -> None:
+    if type:
+        print(f"成功：{message}")
+    else:
+        print(f"失敗：{message}")
+    
 def modeSelectView() -> int:
     while True:
-        print("*"*50)
+        section()
         print("モードの番号を選択してください")
         mode = input(f"{const.MODE} : ")
-        print("*"*50)
         if mode == "1" or mode == "2" or mode == "3":
             break
         else:
