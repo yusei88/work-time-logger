@@ -11,22 +11,22 @@ import model, view
 from util import *
 
 def run():
+    view.initialView()
     # 初期化処理
     # データ保存フォルダを作成する
     saveDir = getSaveDir()
     if not os.path.exists(saveDir):
         os.mkdir(saveDir)
+        view.systemMessage("今月のフォルダを作成",const.TYPE_NORMAL)
     # ユーザーデータがない場合作成する
     for member in const.MEMBERS:
         user = model.User(member)
         if not user.isExist():
-            user.create()
+            view.systemMessage(f"{member}さんのファイルを作成",user.create())
     
-    view.modeSelectView()
-    user = model.User("佐藤")
-    if user.read():
-        print(user.getName())
-        print(user.getTotal())
+    mode = view.modeSelectView()
+    print(f"「{mode}:{const.MODE[mode]}」が選択されました。")
+    
 
 if __name__ == '__main__':
     run()

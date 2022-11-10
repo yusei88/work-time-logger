@@ -12,4 +12,8 @@ DATA_DIRECTORY = "./datas"
 MEMBERS = ["佐藤", "伊藤"]
 
 # モードリスト
-MODE = ["0.勤怠入力", "1.残業報告", "2.なう送信"]
+MODE = ["勤怠入力", "残業報告", "なう送信"]
+
+# 区切り
+SYMBOL = "-"
+SYMBOL_LENGTH = 50

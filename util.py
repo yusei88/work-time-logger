@@ -14,3 +14,12 @@ def getSaveDir() -> str:
     month = dt_now.month
     saveDir = f"{const.DATA_DIRECTORY}/{year}_{month}"
     return saveDir
+
+# 処理結果を通知するメッセージを表示する
+# @input message str 本文
+# @input type bool 
+def systemMessage(message: str, type: bool) -> None:
+    if type:
+        print(f"成功：{message}")
+    else:
+        print(f"失敗：{message}")
