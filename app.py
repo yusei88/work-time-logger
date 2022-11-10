@@ -25,10 +25,8 @@ def run():
             view.systemMessage(f"{member}さんのファイルを作成",user.create())
     
     mode = view.modeSelectView()
-    user = model.User("佐藤")
-    if user.read():
-        print(user.getName())
-        print(user.getTotal())
+    print(f"「{mode}:{const.MODE[mode]}」が選択されました。")
+    
 
 if __name__ == '__main__':
     run()

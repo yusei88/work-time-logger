@@ -5,29 +5,29 @@
 viewを提供する
 
 """
-import const
+import const, util
 
+# 区切り線
 def section():
     print(const.SYMBOL * const.SYMBOL_LENGTH)
 
+# アプリケーション起動View
 def initialView() -> None:
     section()
     print("勤怠管理アプリ")
     section()
 
-def systemMessage(message: str, type: bool) -> None:
-    if type:
-        print(f"成功：{message}")
-    else:
-        print(f"失敗：{message}")
-    
+# モード選択View 
 def modeSelectView() -> int:
+    section()
+    print("モードを選択してください")
+    section()
     while True:
-        section()
-        print("モードの番号を選択してください")
-        mode = input(f"{const.MODE} : ")
-        if mode == "1" or mode == "2" or mode == "3":
+        for i, type in enumerate(const.MODE):
+            print(f"{i}：{type}")
+        mode = input(f"モード: ")
+        if mode == "0" or mode == "1" or mode == "2":
             break
         else:
-            print("モードの番号を入力してください。")
+            print("\n選択肢から番号で入力してください。")
     return int(mode)
