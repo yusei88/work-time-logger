@@ -17,3 +17,9 @@ MODE = ["勤怠入力", "残業報告", "なう送信"]
 # 区切り
 SYMBOL = "-"
 SYMBOL_LENGTH = 50
+
+# 定時
+ON_TIME = "18:00"
+
+# 定時後休憩
+OVER_TIME_REST = 15
